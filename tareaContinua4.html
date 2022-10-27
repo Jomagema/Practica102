@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        var contacto1 = {name: "Maxwell Wright", tlf: "(0191) 719 6495", correo: "Curabitur.egestas.nunc@nonummyac.co.uk"};
+        var contacto2 = {name: "Raja Villareal", tlf: "0866 398 2895", correo: "posuere.vulputate@sed.com"};
+        var contacto3 = {name: "Helen Richards", tlf: "0800 1111", correo: "libero@convallis.edu"};
+
+        var contactos = [contacto1, contacto2, contacto3];
+
+        do{
+        switch (prompt("¿Que quieres hacer? 1.Mostrar primer contacto / 2.Mostrar ultimo contacto / 3.Añadir contacto")) {
+            case "1":
+                alert(contactos[0].name + " / " + contactos[0].tlf + " / " + contactos[0].correo);
+                break;
+            case "2":
+                alert(contactos[contactos.length-1].name + " / " + contactos[contactos.length-1].tlf + " / " + contactos[contactos.length-1].correo);
+                break;
+            case "3": 
+                //do{
+                    let nombre = prompt("Introduce el nombre (No puede estar vacio)");
+                    let telefono = prompt("Introduce el telefono (No puede estar vacio)");
+                    let correo = prompt("Introduce el correo (No puede estar vacio)");
+                //}while( nombre == null || telefono == null || correo == null)
+                var contactoNuevo = {name: nombre, tlf: telefono, correo: correo};
+                contactos.push(contactoNuevo);
+                break;
+            default:
+                alert("No es una opcion valida")
+                break;
+        }
+        }while(true)
+        
+    </script>
+</body>
+</html>
