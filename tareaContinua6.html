@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        var contacto1 = {name: "Maxwell Wright", tlf: "(0191) 719 6495", correo: "Curabitur.egestas.nunc@nonummyac.co.uk"};
+        var contacto2 = {name: "Raja Villareal", tlf: "0866 398 2895", correo: "posuere.vulputate@sed.com"};
+        var contacto3 = {name: "Helen Richards", tlf: "0800 1111", correo: "libero@convallis.edu"};
+
+        var contactos = [contacto1, contacto2, contacto3];
+
+        var salir = true;
+        do{
+        switch (prompt("¿Que quieres hacer? 1.Mostrar contacto concreto / 2.Mostrar todos los contactos / 3.Añadir contacto / 4.Salir")) {
+            case "1":
+                let indice = prompt("¿Que contacto quieres ver?")
+                showContact(contactos, indice-1);
+                break;
+            case "2":
+                showAllContacts(contactos);
+                break;
+            case "3": 
+                //do{
+                    let nombre = prompt("Introduce el nombre (No puede estar vacio)");
+                    let telefono = prompt("Introduce el telefono (No puede estar vacio)");
+                    let correo = prompt("Introduce el correo (No puede estar vacio)");
+                //}while( nombre == null || telefono == null || correo == null)
+                addNewContact(contactos, nombre, telefono, correo);
+                break;
+            case "4":
+                salir = false;
+                break;
+            default:
+                alert("No es una opcion valida")
+                break;
+        }
+        }while(salir)
+        
+
+        function showContact(contactos, indice) {
+            alert(contactos[indice].name + " / " + contactos[indice].tlf + " / " + contactos[indice].correo);
+        }
+
+        function showAllContacts(contactos) {
+            for (let index = 0; index <= contactos.length-1; index++) {
+                alert(contactos[index].name + " / " + contactos[index].tlf + " / " + contactos[index].correo);
+            }
+        }
+
+        function addNewContact(contactos, nombre, telefono, correo) {
+            var contactoNuevo = {name: nombre, tlf: telefono, correo: correo};
+                contactos.push(contactoNuevo);
+        }
+    </script>
+</body>
+</html>
